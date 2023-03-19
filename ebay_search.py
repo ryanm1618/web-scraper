@@ -1,6 +1,6 @@
 #from web_nav import web_nav
 #from file_writer import file_writer
-from curses_ui import curses_ui
+from ebay_search.t_gui import t_gui
 
 #ebay_search = web_nav()
 #search_item = input("Search ebay for: ")
@@ -13,5 +13,5 @@ from curses_ui import curses_ui
 #write_report.write_to_csv()
 #ebay_search.close()
 
-program = curses_ui()
+program = t_gui()
 program.run_gui()

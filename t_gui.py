@@ -1,7 +1,7 @@
 import curses
 import time
 
-class curses_ui:
+class t_gui:
     def __init__(self):
         self.prog_title = "Price Mapper Version 0.0.0"
         self.item_str = "Item Selection"
@@ -19,8 +19,7 @@ class curses_ui:
         mid_y = max_y//2
         mid_x = max_x//2 
 
-
-        stdscr.addstr(mid_y - 2, )
+        
         #text_y = max_y//2
         #text_x = max_x//2 - len(self.test_text)//2
         #stdscr.addstr(text_y, text_x, self.test_text)
