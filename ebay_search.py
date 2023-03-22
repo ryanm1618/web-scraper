@@ -1,6 +1,7 @@
 #from web_nav import web_nav
 #from file_writer import file_writer
 from ebay_search.t_gui import t_gui
+import configparser
 
 #ebay_search = web_nav()
 #search_item = input("Search ebay for: ")
@@ -13,5 +14,9 @@ from ebay_search.t_gui import t_gui
 #write_report.write_to_csv()
 #ebay_search.close()
 
-program = t_gui()
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+
+program = t_gui(config)
 program.run_gui()
