@@ -15,8 +15,12 @@ class t_gui:
         self.notebook_frame = Frame(self.top_frame)
 
         self.top_menu = Menu(self.top_menu_frame)
+        self.file_menu = Menu(self.top_menu, tearoff=0)
+        self.help_menu = Menu(self.top_menu, tearoff=0)
         self.notebook = ttk.Notebook(self.notebook_frame)
         self.home_tab_frame = Frame(self.notebook)
+
+        self.window.config(menu=self.top_menu)
 
     def init_ui(self):
         self.notebook.add(self.home_tab_frame, text=self.config.get('UI', 'ui.hometabtitle'))
