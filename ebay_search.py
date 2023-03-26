@@ -1,6 +1,6 @@
 #from web_nav import web_nav
 #from file_writer import file_writer
-from ebay_search.t_gui import t_gui
+from t_gui import t_gui
 import configparser
 
 #ebay_search = web_nav()
@@ -19,4 +19,4 @@ config.read('config.ini')
 
 
 program = t_gui(config)
-program.run_gui()
+program.t_main()
