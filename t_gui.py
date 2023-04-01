@@ -11,9 +11,9 @@ class t_gui:
         self.window.title(self.title + " v." + self.version)
         self.window.geometry(config.get('Program', 'program.windowsize'))
 
-        self.top_menu = Menu(self.window)
-        self.file_menu = Menu(self.top_menu)
-        self.help_menu = Menu(self.top_menu)
+        self.top_menu = Menu(self.window, tearoff=0)
+        self.top_menu.add_command(label="File")
+        self.top_menu.add_command(label="Quit", command=self.window.quit())
         self.notebook = ttk.Notebook(self.window)
         self.home_tab_frame = Frame(self.notebook)
 
@@ -23,7 +23,7 @@ class t_gui:
 
         self.notebook.add(self.home_tab_frame, text=self.config.get('UI', 'ui.hometabtitle'))
         self.notebook.place(x=0, y=20)
-
+    
 
         
 
