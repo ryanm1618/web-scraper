@@ -1,5 +1,5 @@
 import csv
-from prod_info import prod_info
+from product_info import ProductInfo
 from datetime import datetime
 
 class FileWriter:
