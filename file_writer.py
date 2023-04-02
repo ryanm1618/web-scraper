@@ -2,7 +2,7 @@ import csv
 from prod_info import prod_info
 from datetime import datetime
 
-class file_writer:
+class FileWriter:
 
     def __init__(self, info_list, site_name):
         self.ilist = info_list
