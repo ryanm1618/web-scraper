@@ -2,11 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import configparser
 from bs4 import BeautifulSoup
-from prod_info import prod_info
+from product_info import ProductInfo
 from selenium.webdriver.common.by import By
 import time
 
-class web_nav:
+class WebNav:
     def __init__(self):
         self.config = configparser.ConfigParser()
         self.config.read('/home/ryanmiller/Documents/Projects/PythonProjects/WebScraping/ebay_search/config.ini')
@@ -31,7 +31,7 @@ class web_nav:
             name = product.find('div', {'class' : "s-item__title"}).get_text()
             price = product.find('span', {'class' : "s-item__price"}).get_text()
     
-            info_list.append(prod_info(name, price))
+            info_list.append(ProductInfo(name, price))
 
         return info_list
     #Going to be put on hold for now, I want to work up this idea with ebay to start since that 
@@ -68,7 +68,7 @@ class web_nav:
             name = self.driver.find_element(By.XPATH, "//span[@data-testid='product-card__condition-description']").text
             price = self.driver.find_element(By.TAG_NAME, "//span[@data-testid='product-card__price']").text
 
-            search_results.append(prod_info(name, price))
+            search_results.append(ProductInfo(name, price))
         
         return search_results
     
