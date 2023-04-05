@@ -28,6 +28,6 @@ class t_gui(tk.Tk):
         self.init_ui()
         self.window.mainloop()
 
-class top_level_frame(tk.Frame):
+class MainFrame(tk.Frame):
     def __init__(self):
         pass
