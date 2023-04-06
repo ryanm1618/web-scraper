@@ -10,24 +10,21 @@ class t_gui(tk.Tk):
         self.window = tk.Tk()
         self.window.title(self.title + " v." + self.version)
         self.window.geometry(config.get('Program', 'program.windowsize'))
+        ApplicationFrame(self.window).pack(side="top", fill="both", expand=True)
 
-        self.top_menu = tk.Menu(self.window, tearoff=0)
-        self.top_menu.add_command(label="File")
-        self.top_menu.add_command(label="Quit", command=self.window.quit())
-        self.notebook = ttk.Notebook(self.window)
-        self.home_tab_frame = tk.Frame(self.notebook)
+    def create_widgets(self):
 
-        self.window.config(menu=self.top_menu)
-
-    def init_ui(self):
-
-        self.notebook.add(self.home_tab_frame, text=self.config.get('UI', 'ui.hometabtitle'))
-        self.notebook.place(x=0, y=20) 
+        pass
 
     def t_main(self):
         self.init_ui()
         self.window.mainloop()
 
-class MainFrame(tk.Frame):
-    def __init__(self):
+class ApplicationFrame(tk.Frame):
+    def __init__(self, parent, *args, **kwargs):
+        tk.Frame.__init__(self, parent, *args, **kwargs)
+        self.parent = parent
+        pass
+    
+    def create_widgets(self):
         pass
